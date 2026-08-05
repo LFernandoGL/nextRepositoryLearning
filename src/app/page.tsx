@@ -22,6 +22,7 @@ export default async function HomePage() {
                   alt: "imagem da minha pagina",
                   width: 1200,
                   height: 720,
+                  priority: true,
                }}
             />
 
