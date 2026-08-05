@@ -4,5 +4,10 @@
    "code-runner.ignoreSelection": true,
    "code-runner.executorMap": {
       "typescript": " clear; npx tsx"
-   }
+   },
+
+   "tailwindCSS.experimental.classRegex": [
+      ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+   ],
+   "workbench.editor.enablePreview": false
 }
