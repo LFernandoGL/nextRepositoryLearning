@@ -1,5 +1,5 @@
 import { PostCoverImage } from "../PostCoverImage/Index";
-import { PostHeading } from "../PostHeading/Index";
+import { PostSummary } from "../PostSummary/Index";
 
 export function Postfeatured() {
    const slug = "sjahfkajsh";
@@ -17,23 +17,13 @@ export function Postfeatured() {
             }}
          />
 
-         <div className="flex flex-col gap-4 justify-center">
-            <time
-               className="text-slate-600 text-sm/tight block"
-               dateTime="2026-08-05"
-            >
-               05/08/2026 15:00
-            </time>
-
-            <PostHeading url={postLink} as="h1">
-               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            </PostHeading>
-
-            <p>
-               VENDE O MONITOR PRO GABRIEL POR 250 NO PIX HOJE
-               kkkkkkkkkkkkkkkkkkkkkkk, NAOOOOOOOOOOOOOOOOOOOOOO
-            </p>
-         </div>
+         <PostSummary
+            title="Abacaxi ababouuu de acabaraaaaaaa e eu estou com fome"
+            excerpt="VENDE O MONITOR PRO GABRIEL POR 250 NO PIX HOJE kkkkkkkkkkkkkkkkkkkkkkk, NAOOOOOOOOOOOOOOOOOOOOOO"
+            createdAt="2025-04-08T00:24:38.616Z"
+            postHeading="h1"
+            postLink={postLink}
+         />
       </section>
    );
 }

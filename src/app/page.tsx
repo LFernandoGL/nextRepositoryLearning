@@ -1,9 +1,7 @@
 // import { Header } from "@/components/Header/Index";
 import { Container } from "@/components/Container/Index";
 import { Header } from "@/components/Header/Index";
-import { PostCoverImage } from "@/components/PostCoverImage/Index";
 import { Postfeatured } from "@/components/PostFeatured/Index";
-import { PostHeading } from "@/components/PostHeading/Index";
 import { PostList } from "@/components/PostList/Index";
 import { SpinLoader } from "@/components/SpinLoader";
 
