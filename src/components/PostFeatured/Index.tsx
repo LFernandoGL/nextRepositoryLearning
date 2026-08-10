@@ -1,16 +1,18 @@
 import { PostCoverImage } from "../PostCoverImage/Index";
 import { PostSummary } from "../PostSummary/Index";
+import { findAllPublicPosts } from "@/lib/posts/queries";
 
-export function Postfeatured() {
-   const slug = "sjahfkajsh";
-   const postLink = `/post/${slug}`;
+export async function Postfeatured() {
+   const posts = await findAllPublicPosts();
+   const post = posts[0];
+   const postLink = `/post/${post.slug}`;
    return (
       <section className="grid grid-cols-1 gap-8 mb-16 sm:grid-cols-2 group">
          <PostCoverImage
             linkProps={{ href: postLink }}
             imageProps={{
-               src: "/images/bryen_5.png",
-               alt: "imagem da minha pagina",
+               src: post.coverImageUrl,
+               alt: post.title,
                width: 1200,
                height: 720,
                priority: true,
@@ -18,9 +20,9 @@ export function Postfeatured() {
          />
 
          <PostSummary
-            title="Abacaxi ababouuu de acabaraaaaaaa e eu estou com fome"
-            excerpt="VENDE O MONITOR PRO GABRIEL POR 250 NO PIX HOJE kkkkkkkkkkkkkkkkkkkkkkk, NAOOOOOOOOOOOOOOOOOOOOOO"
-            createdAt="2025-04-08T00:24:38.616Z"
+            title={post.title}
+            excerpt={post.excerpt}
+            createdAt={post.createdAt}
             postHeading="h1"
             postLink={postLink}
          />
