@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
 import clsx from "clsx";
+import Image from "next/image";
+import Link from "next/link";
 
 type PostCoverImageProps = {
    imageProps: React.ComponentProps<typeof Image>;
@@ -10,6 +10,7 @@ type PostCoverImageProps = {
 export function PostCoverImage({ imageProps, linkProps }: PostCoverImageProps) {
    return (
       <Link
+         {...linkProps}
          className={clsx(
             "w-full",
             "h-full",
@@ -17,7 +18,6 @@ export function PostCoverImage({ imageProps, linkProps }: PostCoverImageProps) {
             "rounded-xl",
             linkProps.className,
          )}
-         {...linkProps}
       >
          <Image
             {...imageProps}

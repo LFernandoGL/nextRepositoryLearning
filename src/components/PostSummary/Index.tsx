@@ -1,31 +1,26 @@
-import { formatDateTime } from "@/utils/format-datetime";
+import { PostDate } from "../PostDate";
 import { PostHeading } from "../PostHeading/Index";
 
 type PostSummaryProps = {
    postHeading: "h1" | "h2";
+   postLink: string;
    createdAt: string;
    title: string;
    excerpt: string;
-   postLink: string;
 };
 
-export function PostSummary({
+export async function PostSummary({
+   postHeading,
+   postLink,
    createdAt,
    title,
    excerpt,
-   postLink,
-   postHeading,
 }: PostSummaryProps) {
    return (
-      <div className="flex flex-col gap-4 justify-center">
-         <time
-            className="text-slate-600 text-sm/tight block mt-8"
-            dateTime={createdAt}
-         >
-            {formatDateTime(createdAt)}
-         </time>
+      <div className="flex flex-col gap-4 sm:justify-center">
+         <PostDate dateTime={createdAt} />
 
-         <PostHeading url={postLink} as={postHeading}>
+         <PostHeading as={postHeading} url={postLink}>
             {title}
          </PostHeading>
 
